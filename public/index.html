@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>My Product</title>
+        <base href="/" >
+        <!-- <link href="assets/css/bootstrap.css" rel="stylesheet"> -->
+        <link href="http://vjs.zencdn.net/7.0/video-js.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="http://vjs.zencdn.net/7.0/video.min.js"></script>
+
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+
+        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/angular.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-route.min.js"></script>
+        <script type="text/javascript" src="assets/js/ng-file-upload.min.js"></script>
+        <script type="text/javascript" src="assets/js/ng-file-upload-shim.min.js"></script>
+        <script type="text/javascript" src="assets/js/ocLazyLoad.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body ng-app="binagorAPP" ng-controller="MainCtrl as main" >
+        <div id="app"></div>
+        <div ng-include="'views/components/header.html'"></div>
+        <div ng-view></div>
+    </body>
+    
+</html>
+    

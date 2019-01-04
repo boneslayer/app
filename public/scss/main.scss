@@ -1,0 +1,27 @@
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+
+$theme-colors: (
+    primary: rgb(246, 159, 43),
+    secondary: #FCE290
+    );
+
+
+@import "login.scss";
+@import "createVideo.scss";
+@import "form-elements.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+.header {
+        background-color: theme-color("secondary") ;
+        margin: 0 auto;
+        padding: 0;
+}
+
+.navbar-brand span {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1em;
+    vertical-align: middle;
+}

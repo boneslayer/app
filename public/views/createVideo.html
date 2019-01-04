@@ -1,0 +1,67 @@
+<div class="container" ng-controller="UploadCtrl as up">
+    <h5 class="text-center p-3">Create your music video! It's easy!</h5>
+    <div class="row py-2 px-3" >
+        <div class="col-4">
+            <span>Upload your music and the images to add to the video</span>
+            <form  name="up.upload_form">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input 
+                            class="custom-file-input"
+                            type="file" 
+                            ngf-select
+                            ngf-change="up.upload($file)"
+                            ng-model="up.file" 
+                            name="file" 
+                            ngf-pattern="'audio/*,video/*,image/*'"
+                            accept="audio/*,video/*,image/*" 
+                            ngf-max-size="20MB" 
+                            aria-describedby="inputGroupFileAddon01"
+                        />
+                        <!-- <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"> -->
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+                    
+                <!-- <img style="width:100px;" ng-show="!!up.file" ngf-thumbnail="up.file || '/thumb.jpg'"/> -->
+                <i ng-show="up.upload_form.file.$error.required">*required</i><br>
+                <i ng-show="up.upload_form.file.$error.maxSize">File too large 
+                {{up.file.size / 1000000|number:1}}MB: max 20M</i>
+                <!--  Multiple files
+                <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+                Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div> -->
+                <!-- <button type="submit" ng-click="up.submit()">submit</button> -->
+                <p>{{up.progress}}</p>
+            </form>
+        </div>
+        <div class="col-8">
+            <div >
+                <ul class="border rounded p-3 list-group-flush file-upload" list-files-directive >
+                    <li class="list-group-item"  ng-repeat="f in up.uploads">{{f}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row py-2 px-3">
+        <div class="col-4">
+            <img src="/img/arrow_down.png" class="d-inline-block align-bottom" alt="">
+            <button class="btn btn-outline-primary btn-lg float-right" ng-click="up.createVideo()" ng-disabled="up.createButtonDisabled">Create Video</button>
+        </div>
+        <div class="col-8">
+            <span class="ml-5 pl-5 d-inline-block align-middle">Click on "Create Video!"</span>
+            <img src="/img/arrow_left.png" class="d-inline-block float-right" alt="">
+        </div>
+    </div>
+    <div class="row py-3 px-3">
+        <div class="col-4">
+            <span>Check your video!</span>
+        </div>
+        <div class="col-8">
+            <video id="vplayer" class="video-js" controls preload="false" width="640" height="264"
+            poster="uploads/file-1541725130279.jpg" data-setup="{}">
+            <source src="https://s3-us-west-2.amazonaws.com/video-creator-dev-downloads/angularTest.mp4" type='video/mp4'>
+            </video>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,12 @@
+
+.custom-file-label {
+    cursor: pointer;
+}
+.custom-file-label::after {
+    content: "";
+}
+
+ul.file-upload {
+    height: 14rem;
+    overflow-y: scroll;
+}
