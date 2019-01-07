@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 var app = require('../binapp');
-var server = require('http').Server(app);
 
-server.listen(3000, function() {
-    console.log('Listening on port %d', server.address().port);
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
 }); 
