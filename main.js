@@ -44,7 +44,7 @@ function dirTree(filename) {
 }
 
 //------------------------------------------------------
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.all('/*', function(req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
