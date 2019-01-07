@@ -1,6 +1,6 @@
 var express = require('express'); 
 var app = express(); 
-var server = require('http').Server(app);
+
 var path = require("path");
 var fs = require('fs');
 
@@ -51,7 +51,3 @@ app.all('/*', function(req, res, next) {
     res.sendFile('index.html', { root: __dirname + '/public' });
 });
 
-server.listen(3000, function() {
-    console.log(path.resolve(__dirname + '/public'));
-    console.log('Listening on port %d', server.address().port);
-}); 

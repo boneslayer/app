@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+var app = require('../binapp');
+var server = require('http').Server(app);
+
+server.listen(3000, function() {
+    console.log(path.resolve(__dirname + '/public'));
+    console.log('Listening on port %d', server.address().port);
+}); 
